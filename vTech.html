@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V Tech Solutions | Software & IT Services</title>
+  <meta name="description" content="V Tech Solutions delivers software development, web development, mobile apps, cloud solutions, and IT consulting. Explore pricing tiers, careers, FAQs, and contact us." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Favicon generated from the inline SVG logo below -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%23004d4d'/%3E%3Cstop offset='1' stop-color='%23003333'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='18' fill='url(%23g)'/%3E%3Cpath d='M28 88l18-48h16l18 48h-14l-3.6-11H45.6L42 88H28zm21-22h18l-9-26-9 26z' fill='%23ffcc66'/%3E%3C/ svg%3E">
+  <style>
+    :root{
+      --teal:#004D4D;
+      --teal-dark:#003333;
+      --cream:#F5F5DC;
+      --amber:#FFC34D;
+      --smoke:#e7f0f0;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:#123;line-height:1.6}
+
+    /* Header / Navbar */
+    .navbar{background:var(--teal); box-shadow:0 4px 14px rgba(0,0,0,.12)}
+    .navbar .nav-link{color:#e9fbfb!important}
+    .navbar .nav-link:hover{color:var(--amber)!important}
+    .brand-logo{display:flex;align-items:center;gap:.55rem;color:#fff;text-decoration:none}
+    .brand-logo svg{height:36px;width:auto}
+    .brand-logo span{font-weight:800; letter-spacing:.08em}
+
+    .hero{
+        position:relative;
+        min-height:70vh;
+        display:grid; place-items:center;
+        color:#fff;
+        text-align:center;
+        background:
+          linear-gradient(rgba(0,35,35,.82), rgba(0,35,35,.82)),
+          url('https://thumbs.dreamstime.com/b/abstract-circuit-board-background-futuristic-featuring-complex-design-image-showcases-interconnected-lines-circles-390917458.jpg') center/cover no-repeat;
+        /* Replace the URL above with your deep-teal vintage collage if you have one */
+      }
+    .hero h1{font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight:800; color:#fff; text-shadow:0 6px 30px rgba(0,0,0,.45)}
+    .hero p{max-width:850px;margin:.75rem auto 1.25rem; color:#f1f6f6}
+    .hero .btn-warning{background:var(--amber);border:none;color:#2b2b2b;font-weight:700}
+    .hero .btn-outline-light{border-width:2px}
+    .hero .badges{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+    .hero .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:.55rem .8rem}
+
+    /* Section helpers */
+    section{padding:80px 0}
+    .section-title{font-weight:800;color:#062e2e;margin-bottom:1.25rem}
+    .section-sub{color:#4b6363;max-width:850px}
+
+    /* About */
+    .about-card{background:#fff;border:1px solid #e6efef;border-radius:16px;padding:24px;box-shadow:0 6px 26px rgba(0,0,0,.06)}
+
+    /* Services + pricing */
+    .tier{border:1px solid #e5eeee;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 6px 26px rgba(0,0,0,.06);transition:transform .2s ease}
+    .tier:hover{transform:translateY(-4px)}
+    .tier-header{padding:22px;background:linear-gradient(135deg,#f9fbfb,#eff7f7)}
+    .tier-header .title{font-weight:800}
+    .tier-price{font-size:2rem;font-weight:800;color:var(--teal)}
+    .check{color:#1b9e77}
+    .x{color:#b8c2c2}
+    .tier .btn{font-weight:700}
+
+    /* Careers */
+    .careers{background:linear-gradient(180deg,#f8fbfb,#eef7f7)}
+    .opening{border:1px solid #e4eeee;border-radius:14px;padding:18px;background:#fff}
+
+    /* FAQ */
+    .accordion-button:not(.collapsed){background:#f2f8f8;color:#032}
+    .accordion-button:focus{box-shadow:none}
+
+    /* Contact */
+    .contact{background:var(--teal-dark);color:#e9fbfb}
+    .contact .card{background:#003b3b;border:1px solid #0a5151;color:#e9fbfb}
+    .contact .form-control,.contact .form-select{background:#002d2d;border-color:#0a5151;color:#e9fbfb}
+    .contact .form-control::placeholder{color:#a6c7c7}
+    .contact .btn-warning{background:var(--amber);border:none;font-weight:800}
+
+    /* Footer */
+    footer{background:#002626;color:#a3c2c2}
+    footer a{color:#ffcc66;text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 0;
+      background-color: #f8f9fa;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+    footer a {
+      margin: 0 10px;
+      color: #333;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+       <a class="brand-logo" href="#home" aria-label="V Tech Solutions">
+  <!-- Downward-pointing Sleek Impossible Triangle Logo -->
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="V Tech Solutions logo" style="height:2.5rem; width:auto;">
+    <!-- Outer Triangle -->
+    <polygon points="100,180 180,40 20,40" 
+             fill="url(#gradOuter)" 
+             stroke="#009fe3" stroke-width="8"/>
+    
+    <!-- Inner Cutout Triangle -->
+    <polygon points="100,150 150,60 50,60" 
+             fill="url(#gradInner)"/>
+
+    <!-- Gradient Definitions -->
+    <defs>
+      <linearGradient id="gradOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#19b5fe; stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:#009fe3; stop-opacity:1"/>
+      </linearGradient>
+      <linearGradient id="gradInner" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0.9"/>
+        <stop offset="100%" style="stop-color:#f0f0f0; stop-opacity:0.9"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <span style="margin-left:0.5rem; font-weight:bold; letter-spacing:0.05em;">V TECH SOLUTIONS</span>
+</a>
+
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item dropdown ms-lg-3">
+            <a class="btn btn-outline-light dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="bi bi-box-arrow-in-right me-1"></i>Login</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="login.html"><i class="bi bi-briefcase me-2"></i>Employee Login</a></li>
+              <li><a class="dropdown-item" href="customer-login.html"><i class="bi bi-person-badge me-2"></i>Customer Login</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container">
+      <h1>Empowering Businesses with Technology</h1>
+      <p class="lead">Your trusted partner for <strong>software development</strong>, <strong>web experiences</strong>, <strong>mobile apps</strong>, <strong>cloud solutions</strong>, and <strong>IT consulting</strong>.</p>
+      <div class="d-flex justify-content-center gap-2">
+        <a class="btn btn-warning btn-lg" href="#services"><i class="bi bi-grid-1x2-fill me-2"></i>Our Services</a>
+        <a class="btn btn-outline-light btn-lg" href="#contact"><i class="bi bi-envelope-paper me-2"></i>Get in Touch</a>
+      </div>
+      <div class="badges">
+        <span class="badge rounded-pill"><i class="bi bi-shield-check me-1"></i>Secure by Design</span>
+        <span class="badge rounded-pill"><i class="bi bi-rocket-takeoff me-1"></i>Scalable</span>
+        <span class="badge rounded-pill"><i class="bi bi-lightning-charge me-1"></i>Fast Delivery</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">About V Tech Solutions</h2>
+        <p class="section-sub">
+          V Tech Solutions is a forward-thinking technology consultancy and engineering studio committed to helping organizations innovate faster, operate smarter, and scale securely. By combining startup agility with modern tools, we deliver high-impact software, cloud, and security solutions that empower businesses worldwide.
+        </p>
+        <div class="about-card mt-3">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-lightning-fill text-warning fs-3 me-2"></i>
+                <div><strong>Startup Energy</strong><br>Fast, focused, adaptive</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-people-fill text-primary fs-3 me-2"></i>
+                <div><strong>Collaborative</strong><br>Partnering closely with clients</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-cloud-check-fill text-info fs-3 me-2"></i>
+                <div><strong>Cloud-Native</strong><br>AWS, Azure, GCP ready</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-shield-lock-fill text-success fs-3 me-2"></i>
+                <div><strong>Security-Focused</strong><br>Best practices from day one</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" 
+             class="img-fluid rounded-4 shadow" 
+             alt="V Tech Solutions team brainstorming ideas">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- SERVICES -->
+  <!-- SERVICES -->
+<section id="services" class="bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">Our Services & Pricing</h2>
+      <p class="section-sub mx-auto text-center">Simple, transparent tiers. Every plan includes project management, QA, and deployment support.</p>
+  
+      <!-- Software Development -->
+      <div class="mt-5">
+        <h3 class="fw-bold mb-3"><i class="bi bi-cpu-fill text-primary me-2"></i>Software Development</h3>
+        <div class="row g-4">
+          <!-- Basic -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header">
+                <div class="title">Basic</div>
+                <div class="text-muted">MVPs & Proofs of Concept</div>
+              </div>
+              <div class="p-4">
+                <div class="tier-price">$1,200+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>1 core module</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>REST API</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Basic auth & logging</li>
+                  <li class="mb-2"><i class="bi bi-x-circle x me-2"></i>Advanced analytics</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary w-100">Start Basic</a>
+              </div>
+            </div>
+          </div>
+          <!-- Standard -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header">
+                <div class="title">Standard</div>
+                <div class="text-muted">Scale-ready business apps</div>
+              </div>
+              <div class="p-4">
+                <div class="tier-price">$3,000+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>3–5 modules</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Role-based access</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Automated testing</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Cloud CI/CD</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary w-100">Choose Standard</a>
+              </div>
+            </div>
+          </div>
+          <!-- Advanced -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header">
+                <div class="title">Advanced</div>
+                <div class="text-muted">Enterprise & compliance</div>
+              </div>
+              <div class="p-4">
+                <div class="tier-price">$6,000+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Microservices / Event-driven</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>SOC2/ISO-ready</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Observability & SRE</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>24×7 support</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary w-100">Discuss Advanced</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Web Development -->
+      <div class="mt-5">
+        <h3 class="fw-bold mb-3"><i class="bi bi-globe2 text-primary me-2"></i>Web Development</h3>
+        <div class="row g-4">
+          <!-- Basic -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header"><div class="title">Basic</div><div class="text-muted">Launch fast</div></div>
+              <div class="p-4">
+                <div class="tier-price">$480+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>5 pages, responsive</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>SEO basics</li>
+                  <li class="mb-2"><i class="bi bi-x-circle x me-2"></i>CMS</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary w-100">Start Basic</a>
+              </div>
+            </div>
+          </div>
+          <!-- Standard -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header"><div class="title">Standard</div><div class="text-muted">CMS + Forms</div></div>
+              <div class="p-4">
+                <div class="tier-price">$1,100+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>10–15 pages</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Headless CMS</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Analytics & forms</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary w-100">Choose Standard</a>
+              </div>
+            </div>
+          </div>
+          <!-- Advanced -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header"><div class="title">Advanced</div><div class="text-muted">Web apps & e-com</div></div>
+              <div class="p-4">
+                <div class="tier-price">$2,400+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Next.js/React SSR</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Payments & auth</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Performance budget</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary w-100">Discuss Advanced</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Mobile Development -->
+      <div class="mt-5">
+        <h3 class="fw-bold mb-3"><i class="bi bi-phone text-primary me-2"></i>Mobile App Development</h3>
+        <div class="row g-4">
+          <!-- Basic -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header"><div class="title">Basic</div><div class="text-muted">Single feature app</div></div>
+              <div class="p-4">
+                <div class="tier-price">$1,560+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Flutter/React Native</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>iOS & Android build</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary w-100">Start Basic</a>
+              </div>
+            </div>
+          </div>
+          <!-- Standard -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header"><div class="title">Standard</div><div class="text-muted">Multi-feature app</div></div>
+              <div class="p-4">
+                <div class="tier-price">$3,600+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Push, auth, offline</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Analytics & crashlytics</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary w-100">Choose Standard</a>
+              </div>
+            </div>
+          </div>
+          <!-- Advanced -->
+          <div class="col-md-4">
+            <div class="tier h-100">
+              <div class="tier-header"><div class="title">Advanced</div><div class="text-muted">High scale</div></div>
+              <div class="p-4">
+                <div class="tier-price">$6,600+</div>
+                <ul class="list-unstyled mt-3">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Native modules & CI/CD</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill check me-2"></i>Real-time sync & A/B</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline-primary w-100">Discuss Advanced</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <!-- CAREERS -->
+  <section id="careers" class="careers">
+    <div class="container">
+      <h2 class="section-title text-center">Join Our Team</h2>
+      <p class="section-sub mx-auto text-center">
+        We’re a curious, kind, and high-impact crew. If you love building reliable systems and thoughtful experiences, you’ll fit right in.
+      </p>
+  
+      <div class="row g-4 mt-2">
+        <!-- Software Development -->
+        <div class="col-md-4">
+          <div class="opening">
+            <h5 class="fw-bold">Software Development</h5>
+            <p class="mb-2 text-muted">Remote · India</p>
+            <ul class="mb-3">
+              <li>React / Node / PostgreSQL</li>
+              <li>Experience with cloud & containers</li>
+            </ul>
+            <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#softwareModal">
+              <i class="bi bi-send me-2"></i>Apply Now
+            </button>
+          </div>
+        </div>
+  
+        <!-- Web Development -->
+        <div class="col-md-4">
+          <div class="opening">
+            <h5 class="fw-bold">Web Development</h5>
+            <p class="mb-2 text-muted">Hybrid · Bengaluru</p>
+            <ul class="mb-3">
+              <li>Frontend frameworks & REST APIs</li>
+              <li>Responsive and scalable web applications</li>
+            </ul>
+            <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#webModal">
+              <i class="bi bi-send me-2"></i>Apply Now
+            </button>
+          </div>
+        </div>
+  
+        <!-- Mobile App Development -->
+        <div class="col-md-4">
+          <div class="opening">
+            <h5 class="fw-bold">Mobile App Development</h5>
+            <p class="mb-2 text-muted">Remote · India</p>
+            <ul class="mb-3">
+              <li>Flutter, Firebase / REST</li>
+              <li>App Store / Play Store releases</li>
+            </ul>
+            <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#mobileModal">
+              <i class="bi bi-send me-2"></i>Apply Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modals -->
+  
+  <!-- Software Development Modal -->
+  <div class="modal fade" id="softwareModal" tabindex="-1" aria-labelledby="softwareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="softwareModalLabel">Software Development</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Join our team to design and develop scalable software solutions. You’ll work with cutting-edge technologies and cloud platforms to build reliable applications.</p>
+          <ul>
+            <li>Develop features using React, Node.js, and PostgreSQL</li>
+            <li>Experience with cloud infrastructure and containerization</li>
+            <li>Collaborate with cross-functional teams for high-quality solutions</li>
+            <li>Participate in code reviews and mentoring team members</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Web Development Modal -->
+  <div class="modal fade" id="webModal" tabindex="-1" aria-labelledby="webModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="webModalLabel">Web Development</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Be part of our web development team and build high-quality, responsive web applications. Focus on smooth user experiences and scalable architectures.</p>
+          <ul>
+            <li>Develop and maintain web applications</li>
+            <li>Integrate REST APIs and backend services</li>
+            <li>Ensure responsive and performant UI/UX</li>
+            <li>Collaborate on code quality and testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile App Development Modal -->
+  <div class="modal fade" id="mobileModal" tabindex="-1" aria-labelledby="mobileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="mobileModalLabel">Mobile App Development</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Build high-quality iOS and Android apps as part of our mobile development team. Focus on smooth user experiences and scalable architectures.</p>
+          <ul>
+            <li>Develop and maintain mobile applications</li>
+            <li>Integrate REST APIs and Firebase services</li>
+            <li>Manage app store submissions and releases</li>
+            <li>Ensure high-quality, tested, and performant code</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title text-center">Frequently Asked Questions</h2>
+      <div class="accordion mt-4" id="faqAcc">
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">
+              Which industries do you serve?
+            </button>
+          </h2>
+          <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              We work across finance, healthcare, retail, logistics, education, and SaaS—adapting our playbooks to your risk, scale, and compliance needs.
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">
+              How do your pricing tiers work?
+            </button>
+          </h2>
+          <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Each tier maps to scope and complexity. We estimate effort, define milestones, then work in 1–2 week sprints with demos, QA, and acceptance at every step.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">
+              What about IP and security?
+            </button>
+          </h2>
+          <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              You own 100% of the IP. We follow OWASP, least-privilege access, encrypted secrets, and routine security reviews. Compliance add-ons available.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">
+              How long does a typical project take?
+            </button>
+          </h2>
+          <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Project timelines vary by scope, but most web or mobile projects complete within 8–16 weeks, including design, development, testing, and deployment.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">
+              Do you provide post-launch support?
+            </button>
+          </h2>
+          <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Absolutely! We offer maintenance plans, monitoring, updates, and feature enhancements to ensure your software stays secure and performant.
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f6">
+              Can you integrate with existing systems?
+            </button>
+          </h2>
+          <div id="f6" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Yes, we specialize in integrating new solutions with your current software, APIs, or cloud services for seamless operation and minimal disruption.
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT -->
+<section id="contact" class="contact">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        
+        <!-- Contact Info -->
+        <div class="col-lg-6">
+          <h2 class="section-title text-white">Let’s build something great</h2>
+          <p class="mb-4">Tell us about your goals. We’ll reply within one business day.</p>
+  
+          <div class="card p-3 mb-3">
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-envelope-open fs-4 me-2 text-warning"></i>
+              <span>vtechnologysinfo@gmail.com</span>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-telephone fs-4 me-2 text-warning"></i>
+              <span>+91-9566985698</span>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <i class="bi bi-geo-alt fs-4 me-2 text-warning"></i>
+              <span> Mysore· Remote</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-globe fs-4 me-2 text-warning"></i>
+              <span>www.vtechsolutions.com</span>
+            </div>
+  
+            
+            <div class="d-flex gap-2">
+              <a class="btn btn-outline-light" href="login.html"><i class="bi bi-briefcase me-2"></i>Employee Login</a>
+              <a class="btn btn-outline-light" href="customer-login.html"><i class="bi bi-person-badge me-2"></i>Customer Login</a>
+            </div>
+          </div>
+  
+          <!-- Newsletter Signup -->
+          <div class="card p-3 mt-3">
+            <h5 class="mb-2">Subscribe to our Newsletter</h5>
+            <form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Your email" required>
+                <button class="btn btn-warning" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+  
+        </div>
+  
+        <!-- Contact Form & Map -->
+        <div class="col-lg-6">
+          <form class="card p-4 mb-3" onsubmit="event.preventDefault(); alert('Thanks! We will get back to you shortly.');">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full Name</label>
+                <input class="form-control" placeholder="Your name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="your @gmail" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input class="form-control" placeholder="+91 ..." required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Service</label>
+                <select class="form-select">
+                  <option>Software Development</option>
+                  <option>Web Development</option>
+                  <option>Mobile App</option>
+                  <option>IT Consulting</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Project Brief</label>
+                <textarea class="form-control" rows="4" placeholder="Tell us about your goals, timeline, and budget…"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-warning btn-lg w-100"><i class="bi bi-send me-2"></i>Send Message</button>
+              </div>
+            </div>
+          </form>
+  
+          <!-- Google Maps Embed -->
+          <div class="card p-3">
+            <h5 class="mb-2">Our Offices</h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31123.123!2d77.5946!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670!2sBengaluru!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- FOOTER -->
+<footer class="py-4">
+  <div class="container text-center">
+    <p class="mb-1">&copy; a unit of veera group of company. All Rights Reserved by vtechsolutions.</p>
+    <p class="mb-0">
+      <a href="#"><i class="bi bi-facebook me-2"></i></a>
+      <a href="https://x.com/VTechSolution07?t=7D8EjtLcVn3OZ83RHiUqjg&s=08"><i class="bi bi-twitter-x me-2"></i></a>
+      <a href="https://www.linkedin.com/in/v-tech-solution-solution-4877b3367/"><i class="bi bi-linkedin me-2"></i></a>
+      <a href="https://www.instagram.com/vtechsolution07/"><i class="bi bi-instagram"></i></a>
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).hide();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
